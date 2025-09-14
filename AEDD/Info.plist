@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>AEDD</string>
+    <key>CFBundleDisplayName</key>
+    <string>Aanerud EMC - Emergency Data Dumper</string>
+    <key>CFBundleIdentifier</key>
+    <string>no.uhoert.aedd</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>12.0</string>
+
+    <!-- Usage Descriptions for macOS Privacy -->
+    <key>NSNetworkVolumesUsageDescription</key>
+    <string>AEDD needs access to network volumes to mount and access SMB shares for emergency data copying. This ensures read-only access to your Isilon cluster without .DS_Store conflicts.</string>
+
+    <key>NSRemovableVolumesUsageDescription</key>
+    <string>AEDD needs access to removable volumes to copy data to external drives and storage devices during emergency data operations.</string>
+
+    <key>NSAppleEventsUsageDescription</key>
+    <string>AEDD uses Apple Events to interact with Finder for mounting SMB shares and managing network connections. This provides a seamless integration with the system mount process.</string>
+
+    <key>NSLocalNetworkUsageDescription</key>
+    <string>AEDD needs local network access to discover and connect to SMB shares on your local network. This is essential for accessing your emergency data sources.</string>
+
+    <!-- Bonjour Services for Local Network Permission -->
+    <key>NSBonjourServices</key>
+    <array>
+        <string>_localnetworkauth._tcp</string>
+    </array>
+
+    <!-- File Access Descriptions -->
+    <key>NSDesktopFolderUsageDescription</key>
+    <string>AEDD may copy files to your Desktop when selected as a destination folder.</string>
+
+    <key>NSDocumentsFolderUsageDescription</key>
+    <string>AEDD may copy files to your Documents folder when selected as a destination folder.</string>
+
+    <key>NSDownloadsFolderUsageDescription</key>
+    <string>AEDD may copy files to your Downloads folder when selected as a destination folder.</string>
+
+    <!-- Application Category -->
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.utilities</string>
+
+    <!-- Supported Document Types -->
+    <key>CFBundleDocumentTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>Folder</string>
+            <key>CFBundleTypeRole</key>
+            <string>Viewer</string>
+            <key>LSItemContentTypes</key>
+            <array>
+                <string>public.folder</string>
+            </array>
+        </dict>
+    </array>
+
+    <!-- High Resolution Capable -->
+    <key>NSHighResolutionCapable</key>
+    <true/>
+
+    <!-- Requires Aqua System Appearance -->
+    <key>NSRequiresAquaSystemAppearance</key>
+    <false/>
+
+    <!-- Main Nib File -->
+    <key>NSMainNibFile</key>
+    <string>MainMenu</string>
+
+    <!-- Principal Class -->
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+</dict>
+</plist>
